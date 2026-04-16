@@ -1,0 +1,912 @@
+{
+  "meta": { "page": 1, "pageSize": 10, "totalCount": 100, "hasNextPage": true },
+  "projects": [
+    { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+    { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+    { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+    { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+    { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" }
+  ],
+  "tickets": [
+    {
+      "id": "TCK-2001", "title": "Checkout button unresponsive on Android 14",
+      "description": "Multiple users on Android 14 report that tapping the checkout button does not trigger any action. The issue appears consistently on Samsung Galaxy S24 devices.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-01T08:10:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-301", "fullName": "Lena Hartmann", "email": "lena.hartmann@orion.io", "role": "Senior Flutter Developer" },
+      "reporter": { "id": "USR-401", "fullName": "James Okafor", "email": "james.okafor@orion.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-101", "label": "Android" }, { "id": "TAG-102", "label": "Checkout" }]
+    },
+    {
+      "id": "TCK-2002", "title": "SMS verification codes not arriving",
+      "description": "Users attempting two-factor authentication report that SMS codes are not being delivered. The issue is intermittent and affects approximately 20% of login attempts.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-02T09:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-302", "fullName": "Marco Delgado", "email": "marco.delgado@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-402", "fullName": "Priya Nambiar", "email": "priya.nambiar@orion.io", "role": "Support Specialist" },
+      "tags": [{ "id": "TAG-103", "label": "Authentication" }, { "id": "TAG-104", "label": "SMS" }]
+    },
+    {
+      "id": "TCK-2003", "title": "Fleet map not rendering vehicle positions",
+      "description": "The live map on the fleet tracker screen shows no vehicle markers after the latest deployment. The API is returning data correctly but the map layer fails to render pins.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-02T11:45:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-303", "fullName": "Yuki Tanaka", "email": "yuki.tanaka@meridian.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-403", "fullName": "Carlos Vega", "email": "carlos.vega@meridian.io", "role": "Operations Manager" },
+      "tags": [{ "id": "TAG-105", "label": "Maps" }, { "id": "TAG-106", "label": "Rendering" }]
+    },
+    {
+      "id": "TCK-2004", "title": "Invoice PDF export produces blank pages",
+      "description": "Exporting an invoice to PDF results in a file with the correct page count but all pages are blank. The issue started after the billing module update on March 1st.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-03T10:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-304", "fullName": "Fatima Al-Rashid", "email": "fatima.alrashid@cobalt.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-404", "fullName": "Tom Erikson", "email": "tom.erikson@cobalt.io", "role": "Finance Analyst" },
+      "tags": [{ "id": "TAG-107", "label": "PDF" }, { "id": "TAG-108", "label": "Export" }]
+    },
+    {
+      "id": "TCK-2005", "title": "Push alerts not sent for overdue work orders",
+      "description": "Field technicians are not receiving push notifications when a work order becomes overdue. The backend job appears to be running but the notification dispatch is silently failing.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-03T14:20:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-305", "fullName": "Nia Owusu", "email": "nia.owusu@apex.io", "role": "Tech Lead" },
+      "reporter": { "id": "USR-405", "fullName": "Stefan Muller", "email": "stefan.muller@apex.io", "role": "Field Operations Lead" },
+      "tags": [{ "id": "TAG-109", "label": "Notifications" }, { "id": "TAG-110", "label": "Work Orders" }]
+    },
+    {
+      "id": "TCK-2006", "title": "Dashboard KPI cards show stale data",
+      "description": "The summary KPI cards on the Zenith Ops Console dashboard continue to display yesterday's data even after a manual refresh. The underlying API returns fresh values correctly.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-03-04T08:50:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-306", "fullName": "Aisha Diallo", "email": "aisha.diallo@zenith.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-406", "fullName": "Ryan Cho", "email": "ryan.cho@zenith.io", "role": "Business Analyst" },
+      "tags": [{ "id": "TAG-111", "label": "Dashboard" }, { "id": "TAG-112", "label": "Cache" }]
+    },
+    {
+      "id": "TCK-2007", "title": "User avatar upload silently fails",
+      "description": "When a user attempts to upload a profile avatar larger than 2MB, the upload appears to complete with no error message but the new image never appears.",
+      "status": "Resolved", "priority": "Low", "createdAt": "2026-03-04T13:15:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-307", "fullName": "Owen Fletcher", "email": "owen.fletcher@orion.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-407", "fullName": "Mei Lin", "email": "mei.lin@orion.io", "role": "Product Manager" },
+      "tags": [{ "id": "TAG-113", "label": "Upload" }, { "id": "TAG-114", "label": "Profile" }]
+    },
+    {
+      "id": "TCK-2008", "title": "Route optimization returns incorrect ETAs",
+      "description": "The fleet route optimizer is calculating arrival times that are 30 to 40 minutes shorter than actual travel times. This is causing missed SLA commitments.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-05T09:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-308", "fullName": "Lucas Ferreira", "email": "lucas.ferreira@meridian.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-408", "fullName": "Ingrid Larsson", "email": "ingrid.larsson@meridian.io", "role": "Logistics Director" },
+      "tags": [{ "id": "TAG-115", "label": "Routing" }, { "id": "TAG-116", "label": "ETA" }]
+    },
+    {
+      "id": "TCK-2009", "title": "Subscription renewal emails have broken links",
+      "description": "Renewal reminder emails sent by the billing system contain links that return a 404 error. The link path includes a deprecated route prefix that was removed last sprint.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-05T11:30:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-309", "fullName": "Clara Russo", "email": "clara.russo@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-409", "fullName": "Daniel Park", "email": "daniel.park@cobalt.io", "role": "Customer Success" },
+      "tags": [{ "id": "TAG-117", "label": "Email" }, { "id": "TAG-118", "label": "Links" }]
+    },
+    {
+      "id": "TCK-2010", "title": "Technician checklist cannot be submitted offline",
+      "description": "Field technicians working in areas with no connectivity are unable to submit completed checklists. The offline queue is not persisting form data between app restarts.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-06T07:45:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-310", "fullName": "Hassan El-Amin", "email": "hassan.elamin@apex.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-410", "fullName": "Sonia Patel", "email": "sonia.patel@apex.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-119", "label": "Offline" }, { "id": "TAG-120", "label": "Forms" }]
+    },
+    {
+      "id": "TCK-2011", "title": "Search results do not respect role-based access",
+      "description": "Users with read-only roles are seeing results from restricted modules when using the global search bar. Access control is applied on the detail view but not the search index.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-06T10:20:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-311", "fullName": "Amara Sow", "email": "amara.sow@zenith.io", "role": "Security Engineer" },
+      "reporter": { "id": "USR-411", "fullName": "Felix Wagner", "email": "felix.wagner@zenith.io", "role": "Compliance Officer" },
+      "tags": [{ "id": "TAG-121", "label": "Security" }, { "id": "TAG-122", "label": "Search" }]
+    },
+    {
+      "id": "TCK-2012", "title": "Payment method update fails for AMEX cards",
+      "description": "Customers attempting to update their billing method to an American Express card receive a generic error. Visa and Mastercard update correctly. The payment gateway logs show a field validation error.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-07T09:10:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-312", "fullName": "Jin-ho Baek", "email": "jinho.baek@cobalt.io", "role": "Payments Engineer" },
+      "reporter": { "id": "USR-412", "fullName": "Camille Dubois", "email": "camille.dubois@cobalt.io", "role": "Support Specialist" },
+      "tags": [{ "id": "TAG-123", "label": "Payments" }, { "id": "TAG-124", "label": "Billing" }]
+    },
+    {
+      "id": "TCK-2013", "title": "App crashes on launch for tablet form factors",
+      "description": "The Apex Field Service app crashes immediately on launch when run on any Android tablet. The crash log shows a null pointer exception in the responsive layout initializer.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-07T13:00:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-313", "fullName": "Olusegun Adeyemi", "email": "olusegun.adeyemi@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-413", "fullName": "Bianca Moretti", "email": "bianca.moretti@apex.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-125", "label": "Crash" }, { "id": "TAG-126", "label": "Tablet" }]
+    },
+    {
+      "id": "TCK-2014", "title": "Client contact list pagination skips records",
+      "description": "When paginating through the client contact list, page 3 skips 5 records that appear correctly on page 2. The issue is reproducible with any filter applied.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-08T08:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-314", "fullName": "Sofia Lindqvist", "email": "sofia.lindqvist@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-414", "fullName": "Patrick Huang", "email": "patrick.huang@orion.io", "role": "Product Manager" },
+      "tags": [{ "id": "TAG-127", "label": "Pagination" }, { "id": "TAG-128", "label": "Contacts" }]
+    },
+    {
+      "id": "TCK-2015", "title": "Vehicle telemetry data has 10-minute lag",
+      "description": "Telemetry readings shown in the fleet tracker are consistently 10 minutes behind real time. The data pipeline shows no backlog, suggesting the issue is in the websocket subscription layer.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-08T11:50:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-315", "fullName": "Tariq Ibrahim", "email": "tariq.ibrahim@meridian.io", "role": "Data Engineer" },
+      "reporter": { "id": "USR-415", "fullName": "Yolanda Cruz", "email": "yolanda.cruz@meridian.io", "role": "Operations Analyst" },
+      "tags": [{ "id": "TAG-129", "label": "Telemetry" }, { "id": "TAG-130", "label": "WebSocket" }]
+    },
+    {
+      "id": "TCK-2016", "title": "Ops console session timeout too aggressive",
+      "description": "Users are being forcibly logged out after 5 minutes of inactivity. The configured timeout is 30 minutes. The issue appears to be a race condition in the token refresh logic.",
+      "status": "Closed", "priority": "Medium", "createdAt": "2026-03-09T09:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-316", "fullName": "Beatrice Kwan", "email": "beatrice.kwan@zenith.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-416", "fullName": "Andre Petrov", "email": "andre.petrov@zenith.io", "role": "IT Manager" },
+      "tags": [{ "id": "TAG-131", "label": "Session" }, { "id": "TAG-132", "label": "Authentication" }]
+    },
+    {
+      "id": "TCK-2017", "title": "Refund processing takes over 10 minutes",
+      "description": "Refund requests submitted through the billing suite are not completing within the expected 2-minute window. The payment processor confirms the request is received immediately, suggesting the delay is internal.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-09T14:15:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-317", "fullName": "Nadia Volkova", "email": "nadia.volkova@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-417", "fullName": "Marcus Webb", "email": "marcus.webb@cobalt.io", "role": "Finance Manager" },
+      "tags": [{ "id": "TAG-133", "label": "Payments" }, { "id": "TAG-134", "label": "Performance" }]
+    },
+    {
+      "id": "TCK-2018", "title": "Parts inventory count showing negative values",
+      "description": "Several parts in the field service inventory are displaying negative stock counts after recent job completions. The deduction logic does not appear to check for minimum thresholds before writing.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-10T08:00:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-318", "fullName": "Elias Bergstrom", "email": "elias.bergstrom@apex.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-418", "fullName": "Keiko Yamamoto", "email": "keiko.yamamoto@apex.io", "role": "Warehouse Manager" },
+      "tags": [{ "id": "TAG-135", "label": "Inventory" }, { "id": "TAG-136", "label": "Data Integrity" }]
+    },
+    {
+      "id": "TCK-2019", "title": "Dark mode text illegible on filter chips",
+      "description": "In dark mode, the label text on active filter chips uses a dark color against a dark background, making it unreadable. The issue affects all filter chip variants across the app.",
+      "status": "Resolved", "priority": "Low", "createdAt": "2026-03-10T11:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-319", "fullName": "Rosa Almeida", "email": "rosa.almeida@orion.io", "role": "UI Engineer" },
+      "reporter": { "id": "USR-419", "fullName": "Sam Thornton", "email": "sam.thornton@orion.io", "role": "Designer" },
+      "tags": [{ "id": "TAG-137", "label": "UI" }, { "id": "TAG-138", "label": "Dark Mode" }]
+    },
+    {
+      "id": "TCK-2020", "title": "Geofence alerts firing outside defined zones",
+      "description": "Fleet vehicles are triggering geofence departure alerts while still inside the defined zones. The coordinate comparison logic appears to be using a bounding box instead of the polygon definition.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-11T08:45:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-320", "fullName": "Kwame Asante", "email": "kwame.asante@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-420", "fullName": "Lucia Fernandez", "email": "lucia.fernandez@meridian.io", "role": "Fleet Coordinator" },
+      "tags": [{ "id": "TAG-139", "label": "Geofence" }, { "id": "TAG-140", "label": "Alerts" }]
+    },
+    {
+      "id": "TCK-2021", "title": "Report scheduler not running on weekends",
+      "description": "Scheduled reports configured to run on Saturdays and Sundays are not being generated. Reports scheduled on weekdays work correctly. The cron expression appears to be correct.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-11T13:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-321", "fullName": "Phoebe Nakamura", "email": "phoebe.nakamura@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-421", "fullName": "Alec Fontaine", "email": "alec.fontaine@zenith.io", "role": "Data Analyst" },
+      "tags": [{ "id": "TAG-141", "label": "Scheduler" }, { "id": "TAG-142", "label": "Reports" }]
+    },
+    {
+      "id": "TCK-2022", "title": "Bulk discount codes not applying at checkout",
+      "description": "When a customer applies a bulk discount code, the order total does not change. The code validation endpoint returns a successful response, but the discount amount is not passed to the cart service.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-12T09:20:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-322", "fullName": "Ivan Kozlov", "email": "ivan.kozlov@cobalt.io", "role": "Payments Engineer" },
+      "reporter": { "id": "USR-422", "fullName": "Dana Holt", "email": "dana.holt@cobalt.io", "role": "Sales Manager" },
+      "tags": [{ "id": "TAG-143", "label": "Discounts" }, { "id": "TAG-144", "label": "Checkout" }]
+    },
+    {
+      "id": "TCK-2023", "title": "Signature capture loses data on screen rotation",
+      "description": "When a technician rotates their device during the signature capture step, the drawn signature is cleared. The canvas state is not preserved across configuration changes.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-12T12:40:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-323", "fullName": "Simone Obi", "email": "simone.obi@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-423", "fullName": "Grant Ellis", "email": "grant.ellis@apex.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-145", "label": "Signature" }, { "id": "TAG-146", "label": "State" }]
+    },
+    {
+      "id": "TCK-2024", "title": "Client notes field truncated in list view",
+      "description": "The notes field for client records is being cut off at 50 characters in the list view even when the full text fits within the available space. The truncation is happening in the model serializer.",
+      "status": "Resolved", "priority": "Low", "createdAt": "2026-03-13T09:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-324", "fullName": "Mei-Ying Chou", "email": "meiying.chou@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-424", "fullName": "Aaron Shields", "email": "aaron.shields@orion.io", "role": "Account Manager" },
+      "tags": [{ "id": "TAG-147", "label": "Data" }, { "id": "TAG-148", "label": "UI" }]
+    },
+    {
+      "id": "TCK-2025", "title": "Driver duty status not syncing across devices",
+      "description": "When a driver updates their duty status on one device, the change is not reflected on the dispatcher's screen without a manual page refresh. Real-time sync is not functioning for status changes.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-13T14:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-325", "fullName": "Tobias Weiss", "email": "tobias.weiss@meridian.io", "role": "Tech Lead" },
+      "reporter": { "id": "USR-425", "fullName": "Fatou Dieng", "email": "fatou.dieng@meridian.io", "role": "Dispatch Manager" },
+      "tags": [{ "id": "TAG-149", "label": "Sync" }, { "id": "TAG-150", "label": "Real-Time" }]
+    },
+    {
+      "id": "TCK-2026", "title": "User role changes not taking effect until re-login",
+      "description": "When an administrator changes a user's role, the new permissions are not applied until the affected user logs out and back in. The session token is not being refreshed on role update.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-14T08:15:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-326", "fullName": "Ananya Krishnan", "email": "ananya.krishnan@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-426", "fullName": "Brett Conway", "email": "brett.conway@zenith.io", "role": "IT Administrator" },
+      "tags": [{ "id": "TAG-151", "label": "Permissions" }, { "id": "TAG-152", "label": "Session" }]
+    },
+    {
+      "id": "TCK-2027", "title": "Annual billing cycle not generating correct proration",
+      "description": "When a customer upgrades mid-cycle on an annual plan, the proration calculation charges for the full remaining year instead of the prorated amount.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-14T11:30:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-327", "fullName": "Emeka Chukwu", "email": "emeka.chukwu@cobalt.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-427", "fullName": "Helga Bjornsson", "email": "helga.bjornsson@cobalt.io", "role": "Finance Director" },
+      "tags": [{ "id": "TAG-153", "label": "Billing" }, { "id": "TAG-154", "label": "Proration" }]
+    },
+    {
+      "id": "TCK-2028", "title": "Photo attachments not uploading on iOS 18",
+      "description": "Technicians using iOS 18 devices are unable to attach photos to job reports. The file picker opens correctly but selecting an image causes the app to hang indefinitely.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-15T09:45:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-328", "fullName": "Chioma Eze", "email": "chioma.eze@apex.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-428", "fullName": "Lars Petersen", "email": "lars.petersen@apex.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-155", "label": "iOS" }, { "id": "TAG-156", "label": "Upload" }]
+    },
+    {
+      "id": "TCK-2029", "title": "Client portal login broken for SSO users",
+      "description": "Users authenticating via SSO are redirected to a blank page after the identity provider callback. The redirect URI registered in the IdP does not match the current production URL.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-03-15T13:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-329", "fullName": "Victor Maina", "email": "victor.maina@orion.io", "role": "Security Engineer" },
+      "reporter": { "id": "USR-429", "fullName": "Rachel Goldstein", "email": "rachel.goldstein@orion.io", "role": "IT Manager" },
+      "tags": [{ "id": "TAG-157", "label": "SSO" }, { "id": "TAG-158", "label": "Authentication" }]
+    },
+    {
+      "id": "TCK-2030", "title": "Fuel consumption report missing diesel vehicles",
+      "description": "The fuel consumption report in the fleet tracker only includes petrol vehicles. Diesel vehicles are present in the system but are being excluded by an incorrect fuel type filter in the query.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-16T08:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-330", "fullName": "Alicia Perreira", "email": "alicia.perreira@meridian.io", "role": "Data Engineer" },
+      "reporter": { "id": "USR-430", "fullName": "Josh Kaplan", "email": "josh.kaplan@meridian.io", "role": "Fleet Manager" },
+      "tags": [{ "id": "TAG-159", "label": "Reports" }, { "id": "TAG-160", "label": "Fuel" }]
+    },
+    {
+      "id": "TCK-2031", "title": "Audit log entries missing actor information",
+      "description": "Audit log records for bulk operations are missing the acting user's identity. The user context is not being passed through the async job queue that processes bulk actions.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-16T11:20:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-331", "fullName": "Dara Oduya", "email": "dara.oduya@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-431", "fullName": "Vivienne Lamont", "email": "vivienne.lamont@zenith.io", "role": "Compliance Officer" },
+      "tags": [{ "id": "TAG-161", "label": "Audit" }, { "id": "TAG-162", "label": "Security" }]
+    },
+    {
+      "id": "TCK-2032", "title": "Tax calculation incorrect for Canadian provinces",
+      "description": "Orders placed with a Canadian billing address are being charged the wrong provincial tax rate. The tax table was updated last quarter but the billing service is still using the old cached rates.",
+      "status": "In Progress", "priority": "Critical", "createdAt": "2026-03-17T09:10:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-332", "fullName": "Zara Ahmed", "email": "zara.ahmed@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-432", "fullName": "Timothy Crane", "email": "timothy.crane@cobalt.io", "role": "Tax Specialist" },
+      "tags": [{ "id": "TAG-163", "label": "Tax" }, { "id": "TAG-164", "label": "Billing" }]
+    },
+    {
+      "id": "TCK-2033", "title": "Work order reassignment not notifying new assignee",
+      "description": "When a work order is reassigned to a different technician, the new assignee does not receive a notification. The notification event fires but the recipient resolver is returning the old assignee's ID.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-17T13:45:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-333", "fullName": "Ife Adeleke", "email": "ife.adeleke@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-433", "fullName": "Nina Schultz", "email": "nina.schultz@apex.io", "role": "Field Supervisor" },
+      "tags": [{ "id": "TAG-165", "label": "Notifications" }, { "id": "TAG-166", "label": "Work Orders" }]
+    },
+    {
+      "id": "TCK-2034", "title": "Client contract expiry dates showing wrong year",
+      "description": "Contract records with an expiry date in 2027 are displaying as 2026 in the client hub. The date parsing function is dropping the timezone offset, causing a one-day rollback that shifts the year.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-18T08:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-334", "fullName": "Seo-Yeon Park", "email": "seoyeon.park@orion.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-434", "fullName": "Max Brennan", "email": "max.brennan@orion.io", "role": "Account Executive" },
+      "tags": [{ "id": "TAG-167", "label": "Dates" }, { "id": "TAG-168", "label": "Data" }]
+    },
+    {
+      "id": "TCK-2035", "title": "Fleet maintenance reminders sent in wrong timezone",
+      "description": "Maintenance reminder notifications are being sent at the correct UTC time but display the wrong local time for drivers in non-UTC timezones. The timezone conversion is missing for notification delivery.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-18T12:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-335", "fullName": "Chloe Dupont", "email": "chloe.dupont@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-435", "fullName": "Reuben Adler", "email": "reuben.adler@meridian.io", "role": "Fleet Operations Lead" },
+      "tags": [{ "id": "TAG-169", "label": "Timezone" }, { "id": "TAG-170", "label": "Notifications" }]
+    },
+    {
+      "id": "TCK-2036", "title": "Custom widget builder crashes on empty template",
+      "description": "Attempting to preview a dashboard widget with no template content causes the ops console to crash. An empty template should render a placeholder state, not throw an unhandled exception.",
+      "status": "Resolved", "priority": "Low", "createdAt": "2026-03-19T09:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-336", "fullName": "Preethi Rajan", "email": "preethi.rajan@zenith.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-436", "fullName": "Cole Henderson", "email": "cole.henderson@zenith.io", "role": "Product Manager" },
+      "tags": [{ "id": "TAG-171", "label": "Crash" }, { "id": "TAG-172", "label": "Dashboard" }]
+    },
+    {
+      "id": "TCK-2037", "title": "Grace period not applied on overdue invoices",
+      "description": "Invoices are being flagged as delinquent immediately after the due date rather than after the configured 5-day grace period. The grace period setting is present in the database but is not being read by the delinquency checker.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-19T14:30:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-337", "fullName": "Daisuke Mori", "email": "daisuke.mori@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-437", "fullName": "Sandra Bloom", "email": "sandra.bloom@cobalt.io", "role": "Accounts Receivable" },
+      "tags": [{ "id": "TAG-173", "label": "Invoices" }, { "id": "TAG-174", "label": "Billing" }]
+    },
+    {
+      "id": "TCK-2038", "title": "Job timer does not pause when app is backgrounded",
+      "description": "The job duration timer continues counting when the technician backgrounds the app. The timer should pause when the app is in the background and resume when it returns to the foreground.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-03-20T08:00:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-338", "fullName": "Abena Mensah", "email": "abena.mensah@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-438", "fullName": "Oliver Nash", "email": "oliver.nash@apex.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-175", "label": "Timer" }, { "id": "TAG-176", "label": "Background" }]
+    },
+    {
+      "id": "TCK-2039", "title": "Client hub slow to load with 1000+ contacts",
+      "description": "Organizations with over 1000 contacts experience load times exceeding 15 seconds on the contact list screen. The query is fetching all records without pagination at the data layer.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-03-20T12:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-339", "fullName": "Ryo Fujimoto", "email": "ryo.fujimoto@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-439", "fullName": "Elena Marchetti", "email": "elena.marchetti@orion.io", "role": "Customer Success" },
+      "tags": [{ "id": "TAG-177", "label": "Performance" }, { "id": "TAG-178", "label": "Contacts" }]
+    },
+    {
+      "id": "TCK-2040", "title": "Map satellite view unavailable in offline mode",
+      "description": "When the device has no network connection, switching to satellite map view shows a grey grid. Tile caching for the satellite layer is not being preloaded as part of the offline bundle.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-03-21T09:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-340", "fullName": "Nadine Okonkwo", "email": "nadine.okonkwo@meridian.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-440", "fullName": "Theo Walters", "email": "theo.walters@meridian.io", "role": "Driver Experience Lead" },
+      "tags": [{ "id": "TAG-179", "label": "Offline" }, { "id": "TAG-180", "label": "Maps" }]
+    },
+    {
+      "id": "TCK-2041", "title": "Alert rules duplicated after config import",
+      "description": "Importing an alert configuration file into the ops console results in all existing alert rules being duplicated. The import process should upsert rules rather than always insert.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-21T13:15:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-341", "fullName": "Chidi Nwachukwu", "email": "chidi.nwachukwu@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-441", "fullName": "Isabella Rossi", "email": "isabella.rossi@zenith.io", "role": "Systems Admin" },
+      "tags": [{ "id": "TAG-181", "label": "Import" }, { "id": "TAG-182", "label": "Configuration" }]
+    },
+    {
+      "id": "TCK-2042", "title": "Trial expiry not blocking access on time",
+      "description": "Trial accounts continue to have full access for up to 48 hours after their trial period expires. The expiry check runs as a scheduled job that is not being triggered on time.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-22T08:45:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-342", "fullName": "Yewande Obi", "email": "yewande.obi@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-442", "fullName": "Finn Johansson", "email": "finn.johansson@cobalt.io", "role": "Revenue Operations" },
+      "tags": [{ "id": "TAG-183", "label": "Trial" }, { "id": "TAG-184", "label": "Access Control" }]
+    },
+    {
+      "id": "TCK-2043", "title": "Equipment QR scanner not working under fluorescent lighting",
+      "description": "The in-app QR scanner for scanning equipment barcodes fails to resolve codes under certain fluorescent lighting conditions. The scan succeeds when a flashlight is used.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-03-22T12:00:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-343", "fullName": "Mariam Kone", "email": "mariam.kone@apex.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-443", "fullName": "Derek Sutton", "email": "derek.sutton@apex.io", "role": "Field Technician" },
+      "tags": [{ "id": "TAG-185", "label": "Scanner" }, { "id": "TAG-186", "label": "Hardware" }]
+    },
+    {
+      "id": "TCK-2044", "title": "Archived clients appearing in active search results",
+      "description": "Clients that have been archived are still appearing in search results when the active-only filter is enabled. The search index is not being updated when a client's archive status changes.",
+      "status": "Resolved", "priority": "Low", "createdAt": "2026-03-23T09:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-344", "fullName": "Xiao Wei", "email": "xiao.wei@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-444", "fullName": "Adriana Torres", "email": "adriana.torres@orion.io", "role": "Account Manager" },
+      "tags": [{ "id": "TAG-187", "label": "Search" }, { "id": "TAG-188", "label": "Contacts" }]
+    },
+    {
+      "id": "TCK-2045", "title": "Speed alert threshold not saved after update",
+      "description": "When a fleet manager updates the speed alert threshold in vehicle settings, the change appears to save but reverts to the previous value after a page reload. The PATCH request is returning 200 but the value is not being persisted.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-23T14:20:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-345", "fullName": "Solange Dupré", "email": "solange.dupre@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-445", "fullName": "Adam Briggs", "email": "adam.briggs@meridian.io", "role": "Fleet Safety Manager" },
+      "tags": [{ "id": "TAG-189", "label": "Settings" }, { "id": "TAG-190", "label": "Alerts" }]
+    },
+    {
+      "id": "TCK-2046", "title": "Multi-tenant data bleeding between org contexts",
+      "description": "In rare conditions, users in one organization are seeing records belonging to a different organization. The tenant context resolver has a race condition when handling concurrent requests.",
+      "status": "In Progress", "priority": "Critical", "createdAt": "2026-03-24T07:30:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-346", "fullName": "Kwabena Owusu", "email": "kwabena.owusu@zenith.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-446", "fullName": "Mara Hoffmann", "email": "mara.hoffmann@zenith.io", "role": "Security Officer" },
+      "tags": [{ "id": "TAG-191", "label": "Security" }, { "id": "TAG-192", "label": "Multi-Tenant" }]
+    },
+    {
+      "id": "TCK-2047", "title": "Enterprise plan invoice line items not itemized",
+      "description": "Enterprise plan invoices are showing a single line item for the total amount rather than itemized lines per seat and add-on. The invoice renderer is not expanding the line item template for enterprise tier.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-24T11:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-347", "fullName": "Zainab Umar", "email": "zainab.umar@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-447", "fullName": "Liam Gallagher", "email": "liam.gallagher@cobalt.io", "role": "Enterprise Account Manager" },
+      "tags": [{ "id": "TAG-193", "label": "Invoices" }, { "id": "TAG-194", "label": "Enterprise" }]
+    },
+    {
+      "id": "TCK-2048", "title": "Checklist template changes not versioned",
+      "description": "When a checklist template is edited, submitted job reports referencing the old template version are retroactively updated. Template changes should create a new version rather than modifying the existing one.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-25T09:15:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-348", "fullName": "Tomás Rivera", "email": "tomas.rivera@apex.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-448", "fullName": "Grace Addo", "email": "grace.addo@apex.io", "role": "Operations Manager" },
+      "tags": [{ "id": "TAG-195", "label": "Versioning" }, { "id": "TAG-196", "label": "Templates" }]
+    },
+    {
+      "id": "TCK-2049", "title": "Contact import CSV fails on special characters",
+      "description": "Importing a CSV of contacts fails when any field contains an accented character or em dash. The import parser is not handling UTF-8 encoding correctly.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-25T13:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-349", "fullName": "Aurelie Blanc", "email": "aurelie.blanc@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-449", "fullName": "Henry Kim", "email": "henry.kim@orion.io", "role": "Data Migration Lead" },
+      "tags": [{ "id": "TAG-197", "label": "Import" }, { "id": "TAG-198", "label": "CSV" }]
+    },
+    {
+      "id": "TCK-2050", "title": "Trip history export button missing for depot users",
+      "description": "Depot-level user accounts do not see the trip history export button that is visible to fleet manager accounts. The button is rendered conditionally based on role but the depot role check has an incorrect role string.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-03-26T08:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-350", "fullName": "Adaeze Nwosu", "email": "adaeze.nwosu@meridian.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-450", "fullName": "George Papadopoulos", "email": "george.papadopoulos@meridian.io", "role": "Depot Supervisor" },
+      "tags": [{ "id": "TAG-199", "label": "Permissions" }, { "id": "TAG-200", "label": "Export" }]
+    },
+    {
+      "id": "TCK-2051", "title": "Graph axes labels overlap on small screens",
+      "description": "On devices with screen widths below 360dp, the x-axis labels on line chart widgets overlap and become unreadable. The label renderer does not apply rotation for small viewports.",
+      "status": "In Progress", "priority": "Low", "createdAt": "2026-03-26T12:30:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-351", "fullName": "Lila Novak", "email": "lila.novak@zenith.io", "role": "UI Engineer" },
+      "reporter": { "id": "USR-451", "fullName": "Bart Vermeulen", "email": "bart.vermeulen@zenith.io", "role": "UX Designer" },
+      "tags": [{ "id": "TAG-201", "label": "Charts" }, { "id": "TAG-202", "label": "Responsive" }]
+    },
+    {
+      "id": "TCK-2052", "title": "Coupon codes expire before stated end date",
+      "description": "Customers are reporting that valid coupon codes are being rejected before the advertised expiry date. The expiry comparison is using server time in UTC while the displayed date is in local time.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-27T09:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-352", "fullName": "Seun Adebayo", "email": "seun.adebayo@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-452", "fullName": "Amy Lawson", "email": "amy.lawson@cobalt.io", "role": "Marketing Manager" },
+      "tags": [{ "id": "TAG-203", "label": "Timezone" }, { "id": "TAG-204", "label": "Discounts" }]
+    },
+    {
+      "id": "TCK-2053", "title": "Job notes not visible to dispatchers after sync",
+      "description": "Notes added by technicians during a job are not visible to dispatchers until the technician explicitly closes the job. The notes should sync in real time, not just on job close.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-03-27T13:45:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-353", "fullName": "Kofi Mensah", "email": "kofi.mensah@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-453", "fullName": "Paula Reyes", "email": "paula.reyes@apex.io", "role": "Dispatch Lead" },
+      "tags": [{ "id": "TAG-205", "label": "Sync" }, { "id": "TAG-206", "label": "Notes" }]
+    },
+    {
+      "id": "TCK-2054", "title": "Email notifications sent multiple times for one event",
+      "description": "Some system events are triggering 3 to 5 duplicate email notifications. The event listener appears to be registered multiple times due to a missing deregistration on widget dispose.",
+      "status": "Resolved", "priority": "High", "createdAt": "2026-03-28T08:20:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-354", "fullName": "Isla MacPherson", "email": "isla.macpherson@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-454", "fullName": "Nelson Cruz", "email": "nelson.cruz@orion.io", "role": "Support Manager" },
+      "tags": [{ "id": "TAG-207", "label": "Email" }, { "id": "TAG-208", "label": "Notifications" }]
+    },
+    {
+      "id": "TCK-2055", "title": "Trailer attachment not linked to vehicle record",
+      "description": "When a trailer is attached to a vehicle through the dispatch screen, the link is saved in the UI state but not persisted to the database. A page refresh causes the trailer association to disappear.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-28T12:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-355", "fullName": "Bruno Costa", "email": "bruno.costa@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-455", "fullName": "Clare Mwangi", "email": "clare.mwangi@meridian.io", "role": "Dispatch Coordinator" },
+      "tags": [{ "id": "TAG-209", "label": "Trailers" }, { "id": "TAG-210", "label": "Data" }]
+    },
+    {
+      "id": "TCK-2056", "title": "Bulk user deactivation only deactivates first 50 records",
+      "description": "When an admin selects and deactivates more than 50 users at once, only the first 50 are deactivated. The bulk operation is silently truncating the input list before processing.",
+      "status": "Open", "priority": "High", "createdAt": "2026-03-29T09:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-356", "fullName": "Aiko Suzuki", "email": "aiko.suzuki@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-456", "fullName": "Raymond Opoku", "email": "raymond.opoku@zenith.io", "role": "IT Administrator" },
+      "tags": [{ "id": "TAG-211", "label": "Bulk Operations" }, { "id": "TAG-212", "label": "Users" }]
+    },
+    {
+      "id": "TCK-2057", "title": "Currency symbol not updating after locale change",
+      "description": "When a user changes their preferred locale in account settings, the currency symbol on invoices and checkout screens does not update until the user logs out and back in.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-03-29T14:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-357", "fullName": "Giulia Ferretti", "email": "giulia.ferretti@cobalt.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-457", "fullName": "Samuel Acheampong", "email": "samuel.acheampong@cobalt.io", "role": "Internationalization Lead" },
+      "tags": [{ "id": "TAG-213", "label": "Localization" }, { "id": "TAG-214", "label": "Currency" }]
+    },
+    {
+      "id": "TCK-2058", "title": "Photo evidence required prompt not shown on completion",
+      "description": "Jobs configured to require photo evidence before completion do not show the validation prompt when a technician attempts to close them without photos. The validation check is missing from the completion flow.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-03-30T08:30:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-358", "fullName": "Adwoa Kusi", "email": "adwoa.kusi@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-458", "fullName": "Eric Holmberg", "email": "eric.holmberg@apex.io", "role": "Quality Manager" },
+      "tags": [{ "id": "TAG-215", "label": "Validation" }, { "id": "TAG-216", "label": "Forms" }]
+    },
+    {
+      "id": "TCK-2059", "title": "Client portal shows incorrect plan tier",
+      "description": "After a plan upgrade, the client portal continues to display the previous plan name in the account overview. The plan name is read from a cached profile response that is not invalidated on plan change.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-03-30T12:45:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-359", "fullName": "Oluwafemi Adesanya", "email": "oluwafemi.adesanya@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-459", "fullName": "Nina Scholz", "email": "nina.scholz@orion.io", "role": "Customer Success Manager" },
+      "tags": [{ "id": "TAG-217", "label": "Cache" }, { "id": "TAG-218", "label": "Plans" }]
+    },
+    {
+      "id": "TCK-2060", "title": "Route replay skips segments for idle vehicles",
+      "description": "The route replay feature in fleet tracker skips over time segments where a vehicle was idle for more than 5 minutes. The replay should show the vehicle parked during idle segments rather than jumping to the next movement.",
+      "status": "In Progress", "priority": "Low", "createdAt": "2026-03-31T09:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-360", "fullName": "Hana Bouzid", "email": "hana.bouzid@meridian.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-460", "fullName": "Tristan Lowe", "email": "tristan.lowe@meridian.io", "role": "Analytics Lead" },
+      "tags": [{ "id": "TAG-219", "label": "Replay" }, { "id": "TAG-220", "label": "Maps" }]
+    },
+    {
+      "id": "TCK-2061", "title": "Ops console API keys not masked in settings page",
+      "description": "API keys displayed on the integrations settings page show the full key value instead of masking all but the last 4 characters. This is a security concern for shared workstations.",
+      "status": "Resolved", "priority": "High", "createdAt": "2026-04-01T08:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-361", "fullName": "Djibril Camara", "email": "djibril.camara@zenith.io", "role": "Security Engineer" },
+      "reporter": { "id": "USR-461", "fullName": "Harriet Osei", "email": "harriet.osei@zenith.io", "role": "Security Auditor" },
+      "tags": [{ "id": "TAG-221", "label": "Security" }, { "id": "TAG-222", "label": "API Keys" }]
+    },
+    {
+      "id": "TCK-2062", "title": "Credit note amount not deducted from next invoice",
+      "description": "Credit notes issued to customers are not being automatically applied to their next invoice. The credit balance is visible in the customer record but the invoice generator does not check for available credits before billing.",
+      "status": "Open", "priority": "High", "createdAt": "2026-04-01T12:30:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-362", "fullName": "Petra Novakova", "email": "petra.novakova@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-462", "fullName": "Idris Musa", "email": "idris.musa@cobalt.io", "role": "Billing Manager" },
+      "tags": [{ "id": "TAG-223", "label": "Credits" }, { "id": "TAG-224", "label": "Invoices" }]
+    },
+    {
+      "id": "TCK-2063", "title": "Asset assignment history not displayed in detail view",
+      "description": "The asset detail view in field service does not show the assignment history for the asset. The data is being fetched but the history list widget is hidden behind a zero-height container.",
+      "status": "In Progress", "priority": "Low", "createdAt": "2026-04-02T09:15:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-363", "fullName": "Ama Asare", "email": "ama.asare@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-463", "fullName": "Jorge Salinas", "email": "jorge.salinas@apex.io", "role": "Asset Manager" },
+      "tags": [{ "id": "TAG-225", "label": "Assets" }, { "id": "TAG-226", "label": "UI" }]
+    },
+    {
+      "id": "TCK-2064", "title": "Activity feed duplicates entries on rapid scroll",
+      "description": "When scrolling quickly through the client activity feed, some entries appear duplicated. The deduplication check in the feed aggregator is not comparing IDs correctly when items arrive out of order.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-02T14:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-364", "fullName": "Soren Christensen", "email": "soren.christensen@orion.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-464", "fullName": "Rita Ogbu", "email": "rita.ogbu@orion.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-227", "label": "Feed" }, { "id": "TAG-228", "label": "Performance" }]
+    },
+    {
+      "id": "TCK-2065", "title": "Driver logbook export missing rest period entries",
+      "description": "When exporting a driver logbook to PDF, mandatory rest period entries are omitted from the exported document. Rest periods appear correctly in the on-screen view.",
+      "status": "Resolved", "priority": "High", "createdAt": "2026-04-03T08:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-365", "fullName": "Saoirse Ní Fhaoláin", "email": "saoirse.nifhaolain@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-465", "fullName": "Abdoulaye Barry", "email": "abdoulaye.barry@meridian.io", "role": "Compliance Manager" },
+      "tags": [{ "id": "TAG-229", "label": "Export" }, { "id": "TAG-230", "label": "Compliance" }]
+    },
+    {
+      "id": "TCK-2066", "title": "Webhook delivery retries not respecting backoff",
+      "description": "Failed webhook deliveries are being retried every 10 seconds regardless of the configured exponential backoff settings. The backoff configuration is read but not applied to the retry scheduler.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-03T12:45:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-366", "fullName": "Tunde Fashola", "email": "tunde.fashola@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-466", "fullName": "Mireille Fournier", "email": "mireille.fournier@zenith.io", "role": "Platform Engineer" },
+      "tags": [{ "id": "TAG-231", "label": "Webhooks" }, { "id": "TAG-232", "label": "Reliability" }]
+    },
+    {
+      "id": "TCK-2067", "title": "Seat count not decremented on user deletion",
+      "description": "When a user account is deleted, the organization's active seat count is not decremented. This causes organizations to see incorrect seat utilization and be blocked from adding new users when seats are actually available.",
+      "status": "Open", "priority": "High", "createdAt": "2026-04-04T09:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-367", "fullName": "Yemi Afolabi", "email": "yemi.afolabi@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-467", "fullName": "Claire Beaumont", "email": "claire.beaumont@cobalt.io", "role": "Customer Success" },
+      "tags": [{ "id": "TAG-233", "label": "Seats" }, { "id": "TAG-234", "label": "Users" }]
+    },
+    {
+      "id": "TCK-2068", "title": "Recurring job schedule generator skips leap day",
+      "description": "Recurring jobs scheduled with a monthly frequency skip February 29th on leap years and do not reschedule for March 1st. The schedule generator does not account for months with fewer than 31 days.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-04T14:20:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-368", "fullName": "Chidinma Okafor", "email": "chidinma.okafor@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-468", "fullName": "Mikael Lindgren", "email": "mikael.lindgren@apex.io", "role": "Scheduling Manager" },
+      "tags": [{ "id": "TAG-235", "label": "Scheduling" }, { "id": "TAG-236", "label": "Dates" }]
+    },
+    {
+      "id": "TCK-2069", "title": "Account merge duplicates all contact records",
+      "description": "When two client accounts are merged, all contacts from both accounts are duplicated rather than deduplicated by email address. The merge logic creates new records instead of updating existing ones.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-04-05T08:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-369", "fullName": "Alinta Watson", "email": "alinta.watson@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-469", "fullName": "Fernanda Lima", "email": "fernanda.lima@orion.io", "role": "Data Quality Lead" },
+      "tags": [{ "id": "TAG-237", "label": "Merge" }, { "id": "TAG-238", "label": "Contacts" }]
+    },
+    {
+      "id": "TCK-2070", "title": "HOS clock resets incorrectly at midnight",
+      "description": "Hours of service clocks for drivers in certain timezones are resetting at midnight UTC instead of midnight in the driver's home timezone. This causes drivers to lose available hours prematurely.",
+      "status": "Open", "priority": "Critical", "createdAt": "2026-04-05T12:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-370", "fullName": "Amina Conteh", "email": "amina.conteh@meridian.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-470", "fullName": "Paul Hoffman", "email": "paul.hoffman@meridian.io", "role": "Regulatory Compliance Lead" },
+      "tags": [{ "id": "TAG-239", "label": "HOS" }, { "id": "TAG-240", "label": "Timezone" }]
+    },
+    {
+      "id": "TCK-2071", "title": "Console API usage stats graph not loading",
+      "description": "The API usage statistics graph on the developer settings page remains blank after loading. The chart data request returns a 200 with valid data but the chart component is not rendering it.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-04-06T09:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-371", "fullName": "Lindiwe Dube", "email": "lindiwe.dube@zenith.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-471", "fullName": "Oscar Bjork", "email": "oscar.bjork@zenith.io", "role": "Developer Advocate" },
+      "tags": [{ "id": "TAG-241", "label": "Charts" }, { "id": "TAG-242", "label": "API" }]
+    },
+    {
+      "id": "TCK-2072", "title": "Payment receipt PDF missing company logo",
+      "description": "Payment receipts exported as PDF are missing the company logo that appears correctly in the web view. The PDF renderer is not resolving relative asset paths for logo images.",
+      "status": "In Progress", "priority": "Low", "createdAt": "2026-04-06T14:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-372", "fullName": "Nkosi Zulu", "email": "nkosi.zulu@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-472", "fullName": "Megan Tran", "email": "megan.tran@cobalt.io", "role": "Brand Manager" },
+      "tags": [{ "id": "TAG-243", "label": "PDF" }, { "id": "TAG-244", "label": "Branding" }]
+    },
+    {
+      "id": "TCK-2073", "title": "Technician availability calendar not syncing public holidays",
+      "description": "Public holidays are not being marked as unavailable on the technician availability calendar. The holiday sync job runs successfully but the holidays are not mapped to the correct region for each technician.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-07T08:45:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-373", "fullName": "Vera Ivanova", "email": "vera.ivanova@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-473", "fullName": "Kweku Mensah", "email": "kweku.mensah@apex.io", "role": "Resource Planner" },
+      "tags": [{ "id": "TAG-245", "label": "Calendar" }, { "id": "TAG-246", "label": "Availability" }]
+    },
+    {
+      "id": "TCK-2074", "title": "Client portal two-factor backup codes not generated",
+      "description": "When a user enables two-factor authentication, the backup recovery codes are not generated or displayed. The 2FA setup wizard completes without error but skips the backup code step.",
+      "status": "Open", "priority": "High", "createdAt": "2026-04-07T12:30:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-374", "fullName": "Yaw Darko", "email": "yaw.darko@orion.io", "role": "Security Engineer" },
+      "reporter": { "id": "USR-474", "fullName": "Ingeborg Strand", "email": "ingeborg.strand@orion.io", "role": "IT Security Analyst" },
+      "tags": [{ "id": "TAG-247", "label": "Security" }, { "id": "TAG-248", "label": "2FA" }]
+    },
+    {
+      "id": "TCK-2075", "title": "Fuel card transaction reconciliation fails on weekends",
+      "description": "The automated reconciliation of fuel card transactions fails every Saturday and Sunday with a gateway timeout. The fuel card provider's reconciliation API has lower rate limits on weekends that the system does not account for.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-08T09:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-375", "fullName": "Amara Kouyate", "email": "amara.kouyate@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-475", "fullName": "Riku Virtanen", "email": "riku.virtanen@meridian.io", "role": "Finance Controller" },
+      "tags": [{ "id": "TAG-249", "label": "Reconciliation" }, { "id": "TAG-250", "label": "Fuel" }]
+    },
+    {
+      "id": "TCK-2076", "title": "Console audit trail not capturing read events",
+      "description": "The audit trail is correctly capturing write and delete events but is not logging read access to sensitive record types. The read event hook is present in the code but is conditionally disabled by a feature flag that is off in production.",
+      "status": "Open", "priority": "High", "createdAt": "2026-04-08T13:30:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-376", "fullName": "Obinna Nweke", "email": "obinna.nweke@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-476", "fullName": "Katja Mayer", "email": "katja.mayer@zenith.io", "role": "Compliance Analyst" },
+      "tags": [{ "id": "TAG-251", "label": "Audit" }, { "id": "TAG-252", "label": "Compliance" }]
+    },
+    {
+      "id": "TCK-2077", "title": "Dunning sequence sending final notice too early",
+      "description": "The third and final dunning email is being sent 2 days after the first notice instead of after 14 days as configured. The dunning schedule interval is being read in hours instead of days.",
+      "status": "Resolved", "priority": "Critical", "createdAt": "2026-04-09T08:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-377", "fullName": "Blessing Nwosu", "email": "blessing.nwosu@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-477", "fullName": "Pieter Van Der Berg", "email": "pieter.vandenberg@cobalt.io", "role": "Collections Manager" },
+      "tags": [{ "id": "TAG-253", "label": "Dunning" }, { "id": "TAG-254", "label": "Email" }]
+    },
+    {
+      "id": "TCK-2078", "title": "Customer feedback form not saving on first submit",
+      "description": "The post-job customer feedback form requires users to tap the submit button twice before saving. The first tap triggers validation correctly but does not invoke the save action.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-04-09T12:30:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-378", "fullName": "Afia Boateng", "email": "afia.boateng@apex.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-478", "fullName": "Jacques Lebrun", "email": "jacques.lebrun@apex.io", "role": "Customer Experience Manager" },
+      "tags": [{ "id": "TAG-255", "label": "Forms" }, { "id": "TAG-256", "label": "UX" }]
+    },
+    {
+      "id": "TCK-2079", "title": "Client hub import wizard hangs on large files",
+      "description": "Importing a CSV contact file larger than 5MB causes the import wizard to stop responding after the file validation step. The wizard does not show an error and the upload spinner continues indefinitely.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-04-10T09:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-379", "fullName": "Abiodun Salami", "email": "abiodun.salami@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-479", "fullName": "Katarzyna Wojcik", "email": "katarzyna.wojcik@orion.io", "role": "Data Operations Lead" },
+      "tags": [{ "id": "TAG-257", "label": "Import" }, { "id": "TAG-258", "label": "Performance" }]
+    },
+    {
+      "id": "TCK-2080", "title": "Vehicle inspection report photos not downloading",
+      "description": "Photos attached to vehicle inspection reports cannot be downloaded by fleet managers. Clicking the download link returns a 403 error. The signed URL generation is using the wrong IAM role for fleet manager accounts.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-10T14:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-380", "fullName": "Salimata Toure", "email": "salimata.toure@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-480", "fullName": "Donal Byrne", "email": "donal.byrne@meridian.io", "role": "Fleet Inspector" },
+      "tags": [{ "id": "TAG-259", "label": "Permissions" }, { "id": "TAG-260", "label": "Download" }]
+    },
+    {
+      "id": "TCK-2081", "title": "Integration health check showing false positives",
+      "description": "The integration status page shows all integrations as healthy even when the connected services are unreachable. The health check is pinging the wrong endpoint and always receiving a cached success response.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-04-11T08:15:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-381", "fullName": "Khadija Al-Hassan", "email": "khadija.alhassan@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-481", "fullName": "Emil Sorensen", "email": "emil.sorensen@zenith.io", "role": "Platform Reliability Engineer" },
+      "tags": [{ "id": "TAG-261", "label": "Integrations" }, { "id": "TAG-262", "label": "Monitoring" }]
+    },
+    {
+      "id": "TCK-2082", "title": "Stripe webhook signature validation failing in staging",
+      "description": "Stripe webhook events are failing signature validation in the staging environment. The webhook secret in the staging environment variable was rotated but the billing service was not redeployed to pick up the new value.",
+      "status": "Resolved", "priority": "High", "createdAt": "2026-04-11T12:30:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-382", "fullName": "Chukwuemeka Obi", "email": "chukwuemeka.obi@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-482", "fullName": "Maja Eriksson", "email": "maja.eriksson@cobalt.io", "role": "QA Engineer" },
+      "tags": [{ "id": "TAG-263", "label": "Webhooks" }, { "id": "TAG-264", "label": "Stripe" }]
+    },
+    {
+      "id": "TCK-2083", "title": "Technician travel time not included in job cost",
+      "description": "The job costing report does not include technician travel time in the calculated labour cost. Travel time is tracked and stored but the cost calculation query does not join the travel time records.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-12T09:00:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-383", "fullName": "Esi Asante", "email": "esi.asante@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-483", "fullName": "Rowan MacAllister", "email": "rowan.macallister@apex.io", "role": "Finance Manager" },
+      "tags": [{ "id": "TAG-265", "label": "Costing" }, { "id": "TAG-266", "label": "Reports" }]
+    },
+    {
+      "id": "TCK-2084", "title": "Notification preferences not applying for new users",
+      "description": "New user accounts are not inheriting the organization's default notification preferences. New users receive all notification types regardless of the organization's configured defaults.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-04-12T13:45:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-384", "fullName": "Deborah Asante-Mensah", "email": "deborah.asantemensah@orion.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-484", "fullName": "Adam Ostrowski", "email": "adam.ostrowski@orion.io", "role": "IT Manager" },
+      "tags": [{ "id": "TAG-267", "label": "Notifications" }, { "id": "TAG-268", "label": "Users" }]
+    },
+    {
+      "id": "TCK-2085", "title": "Fleet map clusters not expanding on tap",
+      "description": "When multiple vehicle markers are grouped into a cluster on the map, tapping the cluster does not expand it to show individual vehicles. The cluster tap handler is attached but the expand animation is not triggering.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-13T08:30:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-385", "fullName": "Moussa Traore", "email": "moussa.traore@meridian.io", "role": "Flutter Developer" },
+      "reporter": { "id": "USR-485", "fullName": "Gabrielle Fontaine", "email": "gabrielle.fontaine@meridian.io", "role": "UX Researcher" },
+      "tags": [{ "id": "TAG-269", "label": "Maps" }, { "id": "TAG-270", "label": "UI" }]
+    },
+    {
+      "id": "TCK-2086", "title": "Ops console search returning deleted records",
+      "description": "The global search in the ops console is returning records that have been soft-deleted. The search index is not being updated when a record is deleted, so deleted records remain searchable.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-13T12:15:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-386", "fullName": "Rashida Osei", "email": "rashida.osei@zenith.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-486", "fullName": "Lars-Erik Holm", "email": "larserik.holm@zenith.io", "role": "Data Steward" },
+      "tags": [{ "id": "TAG-271", "label": "Search" }, { "id": "TAG-272", "label": "Data Integrity" }]
+    },
+    {
+      "id": "TCK-2087", "title": "Automatic plan downgrade not processing at term end",
+      "description": "When a customer opts to downgrade their plan at the end of the current term, the downgrade is not being applied at term end. The scheduled downgrade job is queued correctly but is not being picked up by the worker.",
+      "status": "Open", "priority": "High", "createdAt": "2026-04-14T09:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-387", "fullName": "Funke Ojo", "email": "funke.ojo@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-487", "fullName": "Lars Magnusson", "email": "lars.magnusson@cobalt.io", "role": "Revenue Operations Manager" },
+      "tags": [{ "id": "TAG-273", "label": "Plans" }, { "id": "TAG-274", "label": "Scheduler" }]
+    },
+    {
+      "id": "TCK-2088", "title": "Parts request approval workflow stuck in pending",
+      "description": "Parts requests that require manager approval are stuck in pending status even after the manager approves them. The approval event is being recorded but is not transitioning the request to the approved state.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-04-14T13:30:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-388", "fullName": "Adjoa Appiah", "email": "adjoa.appiah@apex.io", "role": "Senior Backend Engineer" },
+      "reporter": { "id": "USR-488", "fullName": "Stig Andersen", "email": "stig.andersen@apex.io", "role": "Procurement Manager" },
+      "tags": [{ "id": "TAG-275", "label": "Workflow" }, { "id": "TAG-276", "label": "Approvals" }]
+    },
+    {
+      "id": "TCK-2089", "title": "Client hub API rate limit headers not returned",
+      "description": "The client hub API is not returning X-RateLimit headers in responses. Third-party integrations that depend on these headers to manage request pacing are hitting rate limits unexpectedly.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-04-15T08:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-389", "fullName": "Kwame Boateng", "email": "kwame.boateng@orion.io", "role": "API Engineer" },
+      "reporter": { "id": "USR-489", "fullName": "Tanja Kovacs", "email": "tanja.kovacs@orion.io", "role": "Integration Partner" },
+      "tags": [{ "id": "TAG-277", "label": "API" }, { "id": "TAG-278", "label": "Rate Limiting" }]
+    },
+    {
+      "id": "TCK-2090", "title": "Maintenance schedule PDF uses wrong date format",
+      "description": "Maintenance schedule PDFs exported for European customers show dates in MM/DD/YYYY format instead of DD/MM/YYYY. The locale is being detected correctly but the date formatter is using the default US locale.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-04-15T12:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-390", "fullName": "Efua Mensah", "email": "efua.mensah@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-490", "fullName": "Cornelius Van Dijk", "email": "cornelius.vandijk@meridian.io", "role": "Regional Manager" },
+      "tags": [{ "id": "TAG-279", "label": "Localization" }, { "id": "TAG-280", "label": "PDF" }]
+    },
+    {
+      "id": "TCK-2091", "title": "Workspace settings save button always disabled",
+      "description": "The save button on the workspace settings page remains disabled even after making changes to the form fields. The button's enabled state is bound to a dirty flag that is not being set when fields change.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-15T16:00:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-391", "fullName": "Ngozi Eze", "email": "ngozi.eze@zenith.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-491", "fullName": "Sigrid Halvorsen", "email": "sigrid.halvorsen@zenith.io", "role": "Operations Admin" },
+      "tags": [{ "id": "TAG-281", "label": "Settings" }, { "id": "TAG-282", "label": "UI" }]
+    },
+    {
+      "id": "TCK-2092", "title": "Failed payment retry not notifying billing contact",
+      "description": "When a payment fails and is automatically retried, the billing contact is not receiving a notification for the failed attempt. Notifications are only sent on the final failure, not on each retry.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-16T08:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-392", "fullName": "Amara Bah", "email": "amara.bah@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-492", "fullName": "Tomas Krejci", "email": "tomas.krejci@cobalt.io", "role": "Finance Operations" },
+      "tags": [{ "id": "TAG-283", "label": "Payments" }, { "id": "TAG-284", "label": "Notifications" }]
+    },
+    {
+      "id": "TCK-2093", "title": "Technician skill matrix not filtering job assignments",
+      "description": "Jobs that require specific technician skills are being assigned to technicians who do not have those skills. The skill filter in the assignment algorithm is reading from a stale in-memory cache instead of the database.",
+      "status": "In Progress", "priority": "High", "createdAt": "2026-04-16T09:30:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-393", "fullName": "Awa Diallo", "email": "awa.diallo@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-493", "fullName": "Michael Bergmann", "email": "michael.bergmann@apex.io", "role": "Workforce Manager" },
+      "tags": [{ "id": "TAG-285", "label": "Skills" }, { "id": "TAG-286", "label": "Scheduling" }]
+    },
+    {
+      "id": "TCK-2094", "title": "Orion hub deep link opens wrong section on iOS",
+      "description": "Deep links to specific client records from email notifications open the app on the home screen rather than navigating directly to the record. The deep link path is parsed correctly but the navigation state is not initialized before the route push.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-16T11:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-394", "fullName": "Senam Agbemavi", "email": "senam.agbemavi@orion.io", "role": "Mobile Engineer" },
+      "reporter": { "id": "USR-494", "fullName": "Britta Hansen", "email": "britta.hansen@orion.io", "role": "CX Manager" },
+      "tags": [{ "id": "TAG-287", "label": "Deep Links" }, { "id": "TAG-288", "label": "iOS" }]
+    },
+    {
+      "id": "TCK-2095", "title": "Driver hours summary miscounting split shifts",
+      "description": "When a driver works a split shift, the hours summary is counting the gap between shifts as worked time. The summary should only sum the active duty segments.",
+      "status": "Resolved", "priority": "High", "createdAt": "2026-04-16T13:00:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-395", "fullName": "Kehinde Adeyemi", "email": "kehinde.adeyemi@meridian.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-495", "fullName": "Astrid Nygaard", "email": "astrid.nygaard@meridian.io", "role": "HR Manager" },
+      "tags": [{ "id": "TAG-289", "label": "HOS" }, { "id": "TAG-290", "label": "Reporting" }]
+    },
+    {
+      "id": "TCK-2096", "title": "Ops dashboard timezone picker resets on page reload",
+      "description": "The timezone selected in the ops dashboard does not persist across page reloads. The selection is saved to localStorage but is not being read back on page initialization.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-04-16T14:30:00Z",
+      "project": { "id": "PRJ-003", "name": "Zenith Ops Console", "code": "ZOC" },
+      "assignee": { "id": "USR-396", "fullName": "Miriam Nkrumah", "email": "miriam.nkrumah@zenith.io", "role": "Frontend Developer" },
+      "reporter": { "id": "USR-496", "fullName": "Benedikt Hofmann", "email": "benedikt.hofmann@zenith.io", "role": "Global Ops Manager" },
+      "tags": [{ "id": "TAG-291", "label": "Timezone" }, { "id": "TAG-292", "label": "Settings" }]
+    },
+    {
+      "id": "TCK-2097", "title": "Subscription cancellation confirmation email not sent",
+      "description": "Customers who cancel their subscription through the self-serve portal do not receive a cancellation confirmation email. The cancellation is processed correctly but the email event is not being emitted.",
+      "status": "In Progress", "priority": "Medium", "createdAt": "2026-04-16T15:00:00Z",
+      "project": { "id": "PRJ-004", "name": "Cobalt Billing Suite", "code": "CBS" },
+      "assignee": { "id": "USR-397", "fullName": "Abigail Darko", "email": "abigail.darko@cobalt.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-497", "fullName": "Hector Morales", "email": "hector.morales@cobalt.io", "role": "Customer Retention Lead" },
+      "tags": [{ "id": "TAG-293", "label": "Email" }, { "id": "TAG-294", "label": "Cancellation" }]
+    },
+    {
+      "id": "TCK-2098", "title": "Job completion report not generated for cancelled jobs",
+      "description": "When a job is cancelled mid-execution, no completion report is generated. Cancelled jobs should still produce a partial report capturing the work done before cancellation.",
+      "status": "Open", "priority": "Low", "createdAt": "2026-04-16T15:30:00Z",
+      "project": { "id": "PRJ-005", "name": "Apex Field Service", "code": "AFS" },
+      "assignee": { "id": "USR-398", "fullName": "Ebony Asiedu", "email": "ebony.asiedu@apex.io", "role": "Backend Engineer" },
+      "reporter": { "id": "USR-498", "fullName": "Jan Novotny", "email": "jan.novotny@apex.io", "role": "Field Operations Manager" },
+      "tags": [{ "id": "TAG-295", "label": "Reports" }, { "id": "TAG-296", "label": "Work Orders" }]
+    },
+    {
+      "id": "TCK-2099", "title": "Client hub API returns 500 on empty filter payload",
+      "description": "Sending a filter request with an empty JSON body to the contacts endpoint returns a 500 internal server error instead of returning all contacts. The filter deserializer is not handling the empty case.",
+      "status": "Resolved", "priority": "Medium", "createdAt": "2026-04-16T16:00:00Z",
+      "project": { "id": "PRJ-001", "name": "Orion Client Hub", "code": "OCH" },
+      "assignee": { "id": "USR-399", "fullName": "Naomi Asante", "email": "naomi.asante@orion.io", "role": "API Engineer" },
+      "reporter": { "id": "USR-499", "fullName": "Conrad Schmidt", "email": "conrad.schmidt@orion.io", "role": "Integration Developer" },
+      "tags": [{ "id": "TAG-297", "label": "API" }, { "id": "TAG-298", "label": "Error Handling" }]
+    },
+    {
+      "id": "TCK-2100", "title": "Fleet carbon emissions report includes off-fleet vehicles",
+      "description": "The carbon emissions summary report is including vehicles that were removed from the fleet during the report period. Removed vehicles should be excluded or shown separately as historical entries.",
+      "status": "Open", "priority": "Medium", "createdAt": "2026-04-16T16:30:00Z",
+      "project": { "id": "PRJ-002", "name": "Meridian Fleet Tracker", "code": "MFT" },
+      "assignee": { "id": "USR-400", "fullName": "Abena Yeboah", "email": "abena.yeboah@meridian.io", "role": "Data Engineer" },
+      "reporter": { "id": "USR-500", "fullName": "Elisabetta Conti", "email": "elisabetta.conti@meridian.io", "role": "Sustainability Manager" },
+      "tags": [{ "id": "TAG-299", "label": "Emissions" }, { "id": "TAG-300", "label": "Reports" }]
+    }
+  ]
+}
