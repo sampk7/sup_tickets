@@ -1,36 +1,32 @@
 class PaginationMeta {
   const PaginationMeta({
-    required this.page,
+    required this.nextCursor,
     required this.pageSize,
     required this.totalCount,
-    required this.hasNextPage,
   });
 
-  final int page;
+  final String? nextCursor;
   final int pageSize;
   final int totalCount;
-  final bool hasNextPage;
 
   factory PaginationMeta.fromJson(Map<String, dynamic> json) {
     return PaginationMeta(
-      page: json['page'] as int,
+      nextCursor: json['nextCursor'] as String?,
       pageSize: json['pageSize'] as int,
       totalCount: json['totalCount'] as int,
-      hasNextPage: json['hasNextPage'] as bool,
     );
   }
 
   PaginationMeta copyWith({
-    int? page,
+    String? nextCursor,
     int? pageSize,
     int? totalCount,
-    bool? hasNextPage,
+    bool clearNextCursor = false,
   }) {
     return PaginationMeta(
-      page: page ?? this.page,
+      nextCursor: clearNextCursor ? null : (nextCursor ?? this.nextCursor),
       pageSize: pageSize ?? this.pageSize,
       totalCount: totalCount ?? this.totalCount,
-      hasNextPage: hasNextPage ?? this.hasNextPage,
     );
   }
 }
