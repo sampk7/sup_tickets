@@ -200,36 +200,76 @@ class FilterBar extends ConsumerWidget {
   ) async {
     final assignees = mockAssignees;
     await showModalBottomSheet<void>(
+      isScrollControlled: true,
       context: context,
       builder: (BuildContext context) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTile(
-                title: const Text('Clear'),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  ref.read(ticketListProvider.notifier).applyFilter(
-                        filter.copyWith(clearAssigneeId: true),
-                      );
-                },
-              ),
-              const Divider(height: 1),
-              ...assignees.map(
-                (User u) => ListTile(
-                  title: Text(u.fullName),
-                  subtitle: Text(u.role),
-                  onTap: () {
-                    Navigator.of(context).pop();
-                    ref.read(ticketListProvider.notifier).applyFilter(
-                          filter.copyWith(assigneeId: u.id),
-                        );
-                  },
+        String query = '';
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            final filteredAssignees = assignees.where((User user) {
+              final q = query.trim().toLowerCase();
+              if (q.isEmpty) {
+                return true;
+              }
+              return user.fullName.toLowerCase().contains(q) ||
+                  user.role.toLowerCase().contains(q);
+            }).toList();
+            return SafeArea(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.75,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          hintText: 'Search assignee',
+                          border: OutlineInputBorder(),
+                          isDense: true,
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            query = value;
+                          });
+                        },
+                      ),
+                    ),
+                    ListTile(
+                      title: const Text('Clear'),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        ref.read(ticketListProvider.notifier).applyFilter(
+                              filter.copyWith(clearAssigneeId: true),
+                            );
+                      },
+                    ),
+                    const Divider(height: 1),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: filteredAssignees.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final u = filteredAssignees[index];
+                          return ListTile(
+                            title: Text(u.fullName),
+                            subtitle: Text(u.role),
+                            onTap: () {
+                              Navigator.of(context).pop();
+                              ref.read(ticketListProvider.notifier).applyFilter(
+                                    filter.copyWith(assigneeId: u.id),
+                                  );
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            );
+          },
         );
       },
     );
